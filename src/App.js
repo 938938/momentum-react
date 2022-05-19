@@ -1,23 +1,67 @@
+import { useState } from 'react';
 import './App.css';
-import {BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import Home from './pages/Home';
-import Calendar from './pages/Calendar';
-import Memo from './pages/Memo';
+import TodoForm from './components/TodoForm';
+import TodoItem from './components/TodoItem';
 
 function App() {
+  const [todos, setTodos] = useState([]);
+
+  const addTodo = (text) =>{
+    let id = 1;
+    if(todos.length > 0){ // 이미 todos가 존재할 경우, id값을 새롭게 변경
+      id = todos[0].id + 1;
+    }
+    let todo = {
+      id:id,
+      text:text,
+      completed: false,
+      important: false,
+    }
+    let newTodos = [todo, ...todos]
+    setTodos(newTodos)
+  }
+  const removeTodo = (id) => {
+    let updatedTodos = [...todos].filter((todo)=>todo.id !== id)
+    setTodos(updatedTodos)
+  }
+
+  const completeTodo = (id) => {
+    let updatedTodos = todos.map((todo)=>{
+      if(todo.id === id) {
+        todo.completed = !todo.completed
+      }
+      return todo
+    })
+    setTodos(updatedTodos)
+  }
+
+  const importantTodo = (id) => {
+    let updatedTodos = todos.map((todo)=>{
+      if(todo.id === id){
+        todo.important = !todo.important
+      }
+      return todo
+    })
+    setTodos(updatedTodos)
+  }
+  let sortedTodos = todos.sort((a,b)=>b.important - a.important)
+
   return (
-    <BrowserRouter>
-      <div className="App">
-        <h2>늘 나타나는 글</h2>
-        <Routes>
-          <Route path = '/' element={<Home />}/>
-          <Route path = '/calendar' element={<Calendar />}/>
-          <Route path = '/memo' element={<Memo />}/>
-          {/* <Route path = '/memo/:id' element={<Memo />}/> */}
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <div className='todo-app'>
+      <h1>Todo List</h1>
+      <TodoForm addTodo={addTodo}/>
+      {sortedTodos.map((todo)=>{
+        return(
+          <TodoItem
+            todo={todo}
+            key={todo.id}
+            removeTodo={removeTodo}
+            completeTodo={completeTodo}
+            importantTodo={importantTodo}
+          />
+        )
+      })}
+    </div>
   );
 }
 
