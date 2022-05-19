@@ -8,19 +8,20 @@ export default function TodoItem(props) {
   return (
     <div className={todo.completed ? 'todo-row complete' : 'todo-row'} style={todo.important ? { background: "orange" } : {}}>
       <AiOutlineStar
-        className='iconsContainer'
+        className='todo-icon'
         onClick={()=>importantTodo(todo.id)}
       />
-      {props.todo.text}
-      <div className='iconsContainer'>
-        <AiFillCheckCircle
-          onClick={() => completeTodo(todo.id)}
-        />
-        <AiFillDelete
-          onClick={()=>removeTodo(todo.id)}
-          style={{marginRight:5}}
-        />
+      <div
+        className='text'
+        onClick={()=>completeTodo(todo.id)}
+      >
+        {props.todo.text}
       </div>
+      <AiFillDelete
+        className='todo-icon'
+        onClick={()=>removeTodo(todo.id)}
+        style={{marginRight:5}}
+      />
     </div>
   )
 }

@@ -44,13 +44,13 @@ function App() {
     })
     setTodos(updatedTodos)
   }
-  let sortedTodos = todos.sort((a,b)=>b.important - a.important)
+  // let sortedTodos = todos.sort((a,b)=>b.important - a.important)
 
   return (
-    <div className='todo-app'>
+    <div className='App'>
       <h1>Todo List</h1>
       <TodoForm addTodo={addTodo}/>
-      {sortedTodos.map((todo)=>{
+      {todos.map((todo)=>{
         return(
           <TodoItem
             todo={todo}
