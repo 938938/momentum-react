@@ -50,17 +50,19 @@ function App() {
     <div className='App'>
       <h1>Todo List</h1>
       <TodoForm addTodo={addTodo}/>
-      {todos.map((todo)=>{
-        return(
-          <TodoItem
-            todo={todo}
-            key={todo.id}
-            removeTodo={removeTodo}
-            completeTodo={completeTodo}
-            importantTodo={importantTodo}
-          />
-        )
-      })}
+      <div className='todo-list'>
+        {todos.map((todo)=>{
+          return(
+            <TodoItem
+              todo={todo}
+              key={todo.id}
+              removeTodo={removeTodo}
+              completeTodo={completeTodo}
+              importantTodo={importantTodo}
+            />
+          )
+        })}
+      </div>
     </div>
   );
 }

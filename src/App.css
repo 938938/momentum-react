@@ -16,12 +16,6 @@ body {
   box-shadow:0 5px 10px 0 rgba(0, 0, 0, 0.286);
   padding:20px;
   height:100vh;
-  overflow:auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.App::-webkit-scrollbar {
-  display: none;
 }
 @media (min-width : 650px){
   .App{
@@ -39,7 +33,14 @@ body {
   margin: 32px 0;
   font-size: 33px;
 }
-
+.todo-list{
+  overflow:auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.todo-list::-webkit-scrollbar {
+  display: none;
+}
 /* TodoForm */
 .todo-form {
   margin-bottom: 32px;
@@ -70,8 +71,6 @@ body {
 /* TodoItem */
 .todo-row {
   display: flex;
-  /* justify-content: space-between; */
-  /* align-items: center; */
   text-align:left;
   margin: 4px auto;
   color: white;

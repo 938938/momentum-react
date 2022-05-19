@@ -6,7 +6,7 @@ export default function TodoItem(props) {
   const { todo, removeTodo, completeTodo,importantTodo } = props
 
   return (
-    <div className={todo.completed ? 'todo-row complete' : 'todo-row'} style={todo.important ? { background: "orange" } : {}}>
+    <div className={todo.completed ? 'todo-row complete' : 'todo-row'} style={todo.important ? { background: "cornflowerblue" } : {}}>
       <AiOutlineStar
         className='todo-icon'
         onClick={()=>importantTodo(todo.id)}
