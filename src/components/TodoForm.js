@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 
 export default function TodoForm(props) {
 
-  const [input, setInput] = useState("");
+  const [value, setValue] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.addTodo(input)
-    setInput("")
+    props.addTodo(value)
+    setValue("")
   }
 
 
@@ -15,8 +15,8 @@ export default function TodoForm(props) {
       <input
         className='todo-input'
         placeholder='할 일을 입력해주세요'
-        value={input}
-        onChange={(e)=>{setInput(e.target.value)}}
+        value={value}
+        onChange={(e)=>{setValue(e.target.value)}}
       />
       <button
         className='todo-button'

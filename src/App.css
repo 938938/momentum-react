@@ -78,16 +78,17 @@ body {
   padding: 16px;
   border-radius: 5px;
   width: 90%;
-  cursor:pointer;
 }
 .text{
   cursor:pointer;
   width:80vw;
+  margin:0;
 }
 .complete {
   text-decoration: line-through;
   color:rgb(177, 177, 177);
   background:rgb(211, 211, 211);
+  opacity:0.5;
 }
 .todo-icon {
   display: flex;

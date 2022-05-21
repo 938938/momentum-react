@@ -1,6 +1,5 @@
 import React from 'react'
 import {AiOutlineStar, AiFillDelete} from "react-icons/ai"
-import {AiFillCheckCircle} from 'react-icons/ai'
 
 export default function TodoItem(props) {
   const { todo, removeTodo, completeTodo,importantTodo } = props
@@ -15,12 +14,11 @@ export default function TodoItem(props) {
         className='text'
         onClick={()=>completeTodo(todo.id)}
       >
-        {props.todo.text}
+        {todo.text}
       </div>
       <AiFillDelete
         className='todo-icon'
         onClick={()=>removeTodo(todo.id)}
-        style={{marginRight:5}}
       />
     </div>
   )
