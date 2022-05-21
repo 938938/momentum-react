@@ -1,31 +1,23 @@
-import { useState } from "react";
+import dayjs from 'dayjs';
+import 'dayjs/locale/ko'
+import { useEffect, useRef, useState } from 'react';
 
 const Clock = () => {
 
-  const [date, setDate] = useState();
+  let nowClock = dayjs().format('YYYY년 MM월 DD일 / HH:mm:ss');
+  const [time, setTime] = useState(nowClock);
+  const interval = useRef(null);
 
-  const newDate = new Date();
-
-  const getDate = () => {
-    const year = newDate.getFullYear();
-    const month = String(newDate.getMonth()+1).padStart(2,"0");
-    const day = String(newDate.getDate()).padStart(2,"0");
-  
-    const hours = String(newDate.getHours()).padStart(2,"0");
-    const min = String(newDate.getMinutes()).padStart(2,"0");
-    const sec = String(newDate.getSeconds()).padStart(2,"0");
-
-    setDate(`${year}년 ${month}월 ${day}일 ${hours}:${min}:${sec}`)
-  }
-  const startClock = () => {
-    setInterval(getDate, 1000)
-  }
-
-  startClock();
+  useEffect(()=>{
+    interval.current = setInterval(()=>{
+      setTime(nowClock);
+    },1000)
+    return () => clearInterval(interval.current);
+  })
 
   return(
     <div>
-      {date}
+      {time}
     </div>
   )
 }
