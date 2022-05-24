@@ -33,6 +33,13 @@ body {
   margin: 32px 0;
   font-size: 33px;
 }
+
+/* Main */
+.Main{
+  display: flex;
+  flex-direction: column;
+  height:90vh;
+}
 .todo-list{
   overflow:auto;
   -ms-overflow-style: none;

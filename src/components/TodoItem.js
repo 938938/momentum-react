@@ -15,6 +15,7 @@ export default function TodoItem(props) {
         onClick={()=>completeTodo(todo.id)}
       >
         {todo.text}
+        {todo.id}
       </div>
       <AiFillDelete
         className='todo-icon'
