@@ -1,29 +1,33 @@
 import React, { useRef, useState } from 'react'
 
-const TodoForm = () => {
+export default function TodoForm(props) {
+
   const todoInput = useRef();
+
   const [value, setValue] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault()
-    // props.addTodo(value)
-    if(value < 1){
+    console.log(value)
+    if(value <1){
       todoInput.current.focus();
       return;
     }
+    props.addTodo(value)
     setValue("")
   }
 
+
   return (
-    <form className='TodoForm' onSubmit={handleSubmit}>
+    <form className='todo-form' onSubmit={handleSubmit}>
       <input
-        className='TodoInput'
         ref={todoInput}
+        className='todo-input'
         placeholder='할 일을 입력해주세요'
         value={value}
         onChange={(e)=>{setValue(e.target.value)}}
       />
       <button
-        className='TodoButton'
+        className='todo-button'
         type='submit'
       >
         추가
@@ -31,5 +35,3 @@ const TodoForm = () => {
     </form>
   )
 }
-
-export default TodoForm;

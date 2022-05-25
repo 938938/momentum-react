@@ -49,13 +49,13 @@ body {
   display: none;
 }
 /* TodoForm */
-.todo-form {
+.TodoForm {
   margin-bottom: 32px;
   display:flex;
   justify-content: space-between;
   padding:0 20px;
 }
-.todo-input {
+.TodoInput {
   width:80vw;
   min-width: 200px;
   height: 25px;
@@ -64,7 +64,7 @@ body {
   border: 1px solid lightblue;
   outline:none;
 }
-.todo-button {
+.TodoButton {
   width:20vw;
   padding: 16px;
   border: none;
