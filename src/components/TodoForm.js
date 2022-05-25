@@ -1,23 +1,22 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 
-const TodoForm = () => {
-  const todoInput = useRef();
+const TodoForm = ({onCreate}) => {
   const [value, setValue] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault()
-    // props.addTodo(value)
     if(value < 1){
-      todoInput.current.focus();
       return;
-    }
+    } // 내용이 입력되지 않았을 경우 onCreate로 전달하지 않고 끝내기
+    onCreate(value);
+    // onCreate로 value를 전달해서 item으로 만들기
     setValue("")
+    // 입력창 초기화
   }
 
   return (
     <form className='TodoForm' onSubmit={handleSubmit}>
       <input
         className='TodoInput'
-        ref={todoInput}
         placeholder='할 일을 입력해주세요'
         value={value}
         onChange={(e)=>{setValue(e.target.value)}}

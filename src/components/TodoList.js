@@ -1,18 +1,25 @@
-const TodoList = ({todolist}) => {
-  console.log(todolist);
+import TodoItem from "./TodoItem";
+
+const TodoList = ({todolist, onDelete, onCompleted,onImportant}) => {
   return(
     <div className="TodoList">
-      투두리스트
-      <p>할 일이 {todolist.length}개 있습니다</p>
       <div>
         {todolist.map((it)=>
-          <div>
-            {it.text}
-          </div>
+          <TodoItem
+            key = {it.id}
+            {...it}
+            onDelete={onDelete}
+            onCompleted={onCompleted}
+            onImportant={onImportant}
+          />
         )}
       </div>
     </div>
   )
+}
+
+TodoList.defaultProps={
+  todolist:[]
 }
 
 export default TodoList;

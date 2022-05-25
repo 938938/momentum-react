@@ -40,13 +40,20 @@ body {
   flex-direction: column;
   height:90vh;
 }
-.todo-list{
-  overflow:auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.Main h1{
+  margin:0;
 }
-.todo-list::-webkit-scrollbar {
-  display: none;
+.TodoLength{
+  font-size:15px;
+  margin:10px;
+  text-align:right;
+  padding-right:50px;
+  color:rgb(173, 173, 173);
+}
+.TodoLength span{
+  color:black;
+  text-decoration:underline;
+  font-size:17px;
 }
 /* TodoForm */
 .TodoForm {
@@ -74,9 +81,18 @@ body {
   background: lightblue;
   color: white;
 }
-
+/* TodoList */
+.TodoList{
+  margin:0;
+  overflow:auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.TodoList::-webkit-scrollbar {
+  display: none;
+}
 /* TodoItem */
-.todo-row {
+.TodoItem {
   display: flex;
   text-align:left;
   margin: 4px auto;
@@ -86,7 +102,7 @@ body {
   border-radius: 5px;
   width: 90%;
 }
-.text{
+.TodoText{
   cursor:pointer;
   width:80vw;
   margin:0;
@@ -97,7 +113,7 @@ body {
   background:rgb(211, 211, 211);
   opacity:0.5;
 }
-.todo-icon {
+.TodoIcon {
   display: flex;
   align-items: center;
   width:10vw;
