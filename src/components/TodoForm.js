@@ -31,4 +31,4 @@ const TodoForm = ({onCreate}) => {
   )
 }
 
-export default TodoForm;
+export default React.memo(TodoForm);

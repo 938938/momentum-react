@@ -1,3 +1,4 @@
+import React from 'react'
 import {AiOutlineStar, AiFillDelete} from "react-icons/ai"
 
 const TodoItem = ({
@@ -5,7 +6,7 @@ const TodoItem = ({
   text,
   completed,
   important,
-  onDelete,
+  onRemove,
   onCompleted,
   onImportant
 }) => {
@@ -24,10 +25,10 @@ const TodoItem = ({
       >{text}</div>
       <AiFillDelete
         className="TodoIcon"
-        onClick={()=>onDelete(id)}
+        onClick={()=>onRemove(id)}
       />
     </div>
   )
 }
 
-export default TodoItem;
+export default React.memo(TodoItem);

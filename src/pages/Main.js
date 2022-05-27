@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import TodoForm from "../components/TodoForm";
 import TodoList from "../components/TodoList";
 
@@ -6,41 +6,40 @@ const Main = () => {
   const [data,setData] = useState([]);
   const dataId = useRef(0);
 
-  const onCreate = (text) => {
+  const onCreate = useCallback((text) => {
     const completed = false;
     const important = false;
     const newItem = {
       text,
-      id : dataId.current
+      id : dataId.current,
+      completed,
+      important
     }
     dataId.current += 1;
-    setData([newItem, ...data]);
-  }
+    setData((data)=>[newItem, ...data]);
+  },[])
 
-  const onDelete = (targetId) => {
-    const newTodoList = data.filter((it)=>it.id !== targetId);
-    setData(newTodoList)
-  }
+  const onRemove = useCallback((targetId) => {
+    setData(data => data.filter((it)=>it.id !== targetId))
+  },[])
 
-  const onCompleted = (targetId) => {
-    const newTodoList = data.map((it)=>{
+  const onCompleted = useCallback((targetId) => {
+    setData(data=>data.map((it)=>{
       if(it.id === targetId){
         it.completed = !it.completed
       }
       return it;
-    })
-    setData(newTodoList)
-  }
+    }))
+  },[])
 
-  const onImportant = (targetId) => {
-    const newTodoList = data.map((it)=>{
+  const onImportant = useCallback((targetId) => {
+    setData(data=>data.map((it)=>{
       if(it.id === targetId){
         it.important = !it.important
       }
       return it;
-    })
-    setData(newTodoList)
-  }
+    }))
+  },[])
 
   return(
     <div className="Main">
@@ -51,7 +50,7 @@ const Main = () => {
       <TodoForm onCreate={onCreate}/>
       <TodoList
         todolist={data}
-        onDelete={onDelete}
+        onRemove={onRemove}
         onCompleted={onCompleted}
         onImportant={onImportant}
       />

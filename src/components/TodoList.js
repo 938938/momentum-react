@@ -1,6 +1,6 @@
 import TodoItem from "./TodoItem";
 
-const TodoList = ({todolist, onDelete, onCompleted,onImportant}) => {
+const TodoList = ({todolist, onRemove, onCompleted,onImportant}) => {
   return(
     <div className="TodoList">
       <div>
@@ -8,7 +8,7 @@ const TodoList = ({todolist, onDelete, onCompleted,onImportant}) => {
           <TodoItem
             key = {it.id}
             {...it}
-            onDelete={onDelete}
+            onRemove={onRemove}
             onCompleted={onCompleted}
             onImportant={onImportant}
           />
