@@ -1,3 +1,4 @@
+import React from 'react'
 import TodoItem from "./TodoItem";
 
 const TodoList = ({todolist, onRemove, onCompleted,onImportant}) => {
@@ -22,4 +23,4 @@ TodoList.defaultProps={
   todolist:[]
 }
 
-export default TodoList;
+export default React.memo(TodoList);

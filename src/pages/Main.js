@@ -1,44 +1,67 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useReducer, useRef } from "react";
 import TodoForm from "../components/TodoForm";
 import TodoList from "../components/TodoList";
 
+const reducer = (state, action) => {
+  switch(action.type){
+    case 'INIT':{
+      return action.data;
+    }
+    case 'CREATE':{
+      const newItem = {
+        ...action.data
+      }
+      return [newItem, ...state]
+    }
+    case 'REMOVE':{
+      return state.filter((it)=>it.id !== action.targetId)
+    }
+    case 'COMPLETED':{
+      return state.map((it)=>
+        it.id === action.targetId ? {...it, completed: !it.completed } : it
+      )
+    }
+    case 'IMPORTANT':{
+      return state.map((it)=>
+        it.id === action.targetId ? {...it, important: !it.important } : it
+      )
+    }
+    default:
+      return state;
+  }
+}
+
 const Main = () => {
-  const [data,setData] = useState([]);
+  // const [data,setData] = useState([]);
+
+  const [data,dispatch] = useReducer(reducer,[]);
   const dataId = useRef(0);
 
+  const getData = () => {
+    dispatch({type:"INIT",data:data})
+  };
+  useEffect(()=>{
+    getData();
+  },[])
+
   const onCreate = useCallback((text) => {
-    const completed = false;
-    const important = false;
-    const newItem = {
-      text,
-      id : dataId.current,
-      completed,
-      important
-    }
+    dispatch({
+      type:"CREATE",
+      data:{text, id:dataId.current, completed:false, important:false}
+    })
     dataId.current += 1;
-    setData((data)=>[newItem, ...data]);
   },[])
 
   const onRemove = useCallback((targetId) => {
-    setData(data => data.filter((it)=>it.id !== targetId))
+    dispatch({type:"REMOVE",targetId})
   },[])
 
   const onCompleted = useCallback((targetId) => {
-    setData(data=>data.map((it)=>{
-      if(it.id === targetId){
-        it.completed = !it.completed
-      }
-      return it;
-    }))
+    dispatch({type:"COMPLETED", targetId})
   },[])
 
   const onImportant = useCallback((targetId) => {
-    setData(data=>data.map((it)=>{
-      if(it.id === targetId){
-        it.important = !it.important
-      }
-      return it;
-    }))
+    dispatch({type:"IMPORTANT",targetId})
   },[])
 
   return(
