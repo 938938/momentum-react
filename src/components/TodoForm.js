@@ -3,6 +3,7 @@ import { TodoDispatchContext } from '../pages/Main';
 
 const TodoForm = () => {
   const {onCreate} = useContext(TodoDispatchContext);
+  // TodoDispatchContext에서 바로 onCreate를 받아오기
   const [value, setValue] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault()

@@ -9,6 +9,7 @@ const TodoItem = ({
   important,
 }) => {
   const {onRemove, onCompleted, onImportant} = useContext(TodoDispatchContext);
+  // useContext를 통해 TodoList를 거치지 않고 바로 데이터를 받아오기
 
   return(
     <div

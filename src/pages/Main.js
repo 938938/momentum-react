@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useReducer, useRef } from "reac
 import TodoForm from "../components/TodoForm";
 import TodoList from "../components/TodoList";
 
+// useReducer에 사용하는 reducer 함수
 const reducer = (state, action) => {
   switch(action.type){
     case 'INIT':{
@@ -45,6 +46,7 @@ const Main = () => {
   useEffect(()=>{
     getData();
   },[])
+  // localStorage를 사용하게 될 getData 함수
 
   const onCreate = useCallback((text) => {
     dispatch({
@@ -82,6 +84,7 @@ const Main = () => {
           </div>
           <TodoForm />
           <TodoList />
+          {/* Provider으로 직접 전달하기 때문에 TodoForm과 TodoList에 따로 데이터를 전달하지 않아도 됨 */}
         </div>
       </TodoDispatchContext.Provider>
     </TodoStateContext.Provider>
