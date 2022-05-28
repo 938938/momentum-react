@@ -2,6 +2,13 @@
 
 [한입 크기로 잘라 먹는 리액트(React.js) : 기초부터 실전까지](https://inf.run/2XT4) 강의를 참고로 하여 만들어본 TodoList 입니다.
 <br>
+자세한 제작 기록은 블로그의 [React 로 Todo List 만들기](https://fdaytday.tistory.com/category/Project) 게시물에서 확인하실 수 있습니다.
+
+<br>
+
+---
+
+<br>
 
 ![현재 페이지](https://user-images.githubusercontent.com/92746200/170830038-77b40a49-8465-41f9-abf9-a0cc1776d659.JPG)
 
