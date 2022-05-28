@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { TodoDispatchContext } from '../pages/Main';
 
-const TodoForm = ({onCreate}) => {
+const TodoForm = () => {
+  const {onCreate} = useContext(TodoDispatchContext);
   const [value, setValue] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault()

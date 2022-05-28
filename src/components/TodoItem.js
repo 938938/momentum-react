@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {AiOutlineStar, AiFillDelete} from "react-icons/ai"
+import { TodoDispatchContext } from '../pages/Main'
 
 const TodoItem = ({
   id,
   text,
   completed,
   important,
-  onRemove,
-  onCompleted,
-  onImportant
 }) => {
+  const {onRemove, onCompleted, onImportant} = useContext(TodoDispatchContext);
+
   return(
     <div
       className={completed ? "TodoItem complete" : "TodoItem"}

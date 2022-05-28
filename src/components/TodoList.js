@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoStateContext } from '../pages/Main';
 import TodoItem from "./TodoItem";
 
-const TodoList = ({todolist, onRemove, onCompleted,onImportant}) => {
+const TodoList = () => {
+  const todolist = useContext(TodoStateContext);
   return(
     <div className="TodoList">
       <div>
@@ -9,9 +11,6 @@ const TodoList = ({todolist, onRemove, onCompleted,onImportant}) => {
           <TodoItem
             key = {it.id}
             {...it}
-            onRemove={onRemove}
-            onCompleted={onCompleted}
-            onImportant={onImportant}
           />
         )}
       </div>
