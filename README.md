@@ -22,9 +22,11 @@
   React.memo, useCallback, useReducer을 사용하여 최적화 진행.
 - ver1.3 <br>
   Context를 사용하여 최적화를 진행.
+- ver1.4 <br>
+  localStorage를 사용, 데이터 저장이 가능해짐.
 
 ## 앞으로 업데이트 할 내용(예정, 순서 무관)
 
-- localState를 이용한 데이터 저장
+- ~~localState를 이용한 데이터 저장~~
 - 완료한 할일을 할일리스트 아래로 이동하는 기능
 - TodoList와 다른 페이지에 메모장 페이지를 추가
