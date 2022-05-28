@@ -4,54 +4,66 @@ import TodoList from "../components/TodoList";
 
 // useReducer에 사용하는 reducer 함수
 const reducer = (state, action) => {
+  let newState = [];
   switch(action.type){
     case 'INIT':{
       return action.data;
     }
     case 'CREATE':{
-      const newItem = {
-        ...action.data
-      }
-      return [newItem, ...state]
+      newState = [action.data, ...state]
+      break;
     }
     case 'REMOVE':{
-      return state.filter((it)=>it.id !== action.targetId)
+      newState = state.filter((it)=>it.id !== action.targetId)
+      break;
     }
     case 'COMPLETED':{
-      return state.map((it)=>
+      newState = state.map((it)=>
         it.id === action.targetId ? {...it, completed: !it.completed } : it
       )
+      break;
     }
     case 'IMPORTANT':{
-      return state.map((it)=>
+      newState = state.map((it)=>
         it.id === action.targetId ? {...it, important: !it.important } : it
       )
+      break;
     }
     default:
       return state;
   }
+  localStorage.setItem('todo',JSON.stringify(newState));
+  // localStorage에 'todo'라는 key값으로 데이터를 저장
+  return newState;
 }
 
 export const TodoStateContext = React.createContext();
 export const TodoDispatchContext = React.createContext();
 
 const Main = () => {
-
   const [data,dispatch] = useReducer(reducer,[]);
   const dataId = useRef(0);
 
-  const getData = () => {
-    dispatch({type:"INIT",data:data})
-  };
   useEffect(()=>{
-    getData();
+    const localData = localStorage.getItem('todo');
+    if(localData){
+      const todoList = JSON.parse(localData).sort((a,b)=>parseInt(b.id) - parseInt(a.id));
+      if(todoList.length>=1){
+        dataId.current = parseInt(todoList[0].id) + 1;
+        dispatch({type:"INIT", data:todoList})
+      }
+    }
   },[])
-  // localStorage를 사용하게 될 getData 함수
 
   const onCreate = useCallback((text) => {
     dispatch({
       type:"CREATE",
-      data:{text, id:dataId.current, completed:false, important:false}
+      data:{
+        text,
+        id:dataId.current,
+        completed:false,
+        important:false
+      }
     }) // 아이템을 생성할 때 필요한 데이터를 전달
     dataId.current += 1;
   },[])
