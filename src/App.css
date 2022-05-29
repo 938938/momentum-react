@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet&display=swap');
+
+
 body {
   background-color:rgb(236, 236, 236);
   display:flex;
@@ -5,6 +8,7 @@ body {
   align-items:center;
   min-height:100vh;
   margin:0px;
+  font-family: 'Hahmlet', serif;
 }
 .App {
   display: flex;
@@ -29,10 +33,6 @@ body {
     width:90vw;
   }
 }
-.App h1 {
-  margin: 32px 0;
-  font-size: 33px;
-}
 
 /* Main */
 .Main{
@@ -42,6 +42,7 @@ body {
 }
 .Main h1{
   margin:0;
+  font-size:35px;
 }
 .TodoLength{
   font-size:15px;
@@ -70,6 +71,7 @@ body {
   border-radius: 4px 0 0 4px;
   border: 1px solid lightblue;
   outline:none;
+  font-family: 'Hahmlet', serif;
 }
 .TodoButton {
   width:20vw;
@@ -119,4 +121,10 @@ body {
   width:10vw;
   font-size: 24px;
   cursor: pointer;
+}
+
+/* Clock */
+.Clock{
+  color:rgb(87, 87, 87);
+  font-size:15px;
 }

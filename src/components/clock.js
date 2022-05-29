@@ -16,7 +16,7 @@ const Clock = () => {
   })
 
   return(
-    <div>
+    <div className='Clock'>
       {time.format('YYYY년 MM월 DD일 HH:mm:ss')}
     </div>
   )
