@@ -11,7 +11,7 @@
 
 <br>
 
-![ver1.5](https://user-images.githubusercontent.com/92746200/170853311-2ae8c571-f11f-441b-bce3-0212e2755952.png)
+![ver1.6](https://user-images.githubusercontent.com/92746200/170889068-22d9bc19-9600-44c3-ae65-ab3af68523ab.png)
 
 ## 업데이트 기록
 
