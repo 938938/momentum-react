@@ -1,6 +1,7 @@
 # TodoList - React.ver
 
 [한입 크기로 잘라 먹는 리액트(React.js) : 기초부터 실전까지](https://inf.run/2XT4) 강의를 참고로 하여 만들어본 TodoList 입니다.
+[TodoList](https://938-todo-list.web.app)를 통해 직접 사용해보실 수 있습니다.
 <br>
 자세한 제작 기록은 블로그의 [React 로 Todo List 만들기](https://fdaytday.tistory.com/category/Project) 게시물에서 확인하실 수 있습니다.
 
@@ -27,6 +28,9 @@
 - ver1.5 <br>
   가독성 고려 완료한 할 일을 아래로, 중요한 할 일은 위로 배치되도록 변경.<br>
   완료한 할 일도 남은 할 일에 포함되는 오류 수정.
+- ver1.6 <br>
+  CSS 수정(font-family 변경).
+  배포 시작.
 
 ## 앞으로 업데이트 할 내용(예정, 순서 무관)
 
@@ -34,4 +38,5 @@
 - ~~localState를 이용한 데이터 저장~~
 - ~~완료한 할일을 할일리스트 아래로 이동하는 기능~~
 - ~~중요한 할일을 할일리스트 위로 이동~~
+- 중요한 할일을 체크했을 경우, 아이콘을 색칠된 별로 변경
 - TodoList와 다른 페이지에 메모장 페이지를 추가
