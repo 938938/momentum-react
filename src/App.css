@@ -7,7 +7,7 @@ body {
   justify-content:center;
   align-items:center;
   min-height:100vh;
-  margin:0px;
+  margin:0;
   font-family: 'Hahmlet', serif;
 }
 .App {
@@ -20,6 +20,8 @@ body {
   box-shadow:0 5px 10px 0 rgba(0, 0, 0, 0.286);
   padding:20px;
   height:100vh;
+  margin:0;
+  box-sizing: border-box;
 }
 @media (min-width : 650px){
   .App{
@@ -34,19 +36,51 @@ body {
   }
 }
 
+/* Header */
+.Header{
+  height:5vh;
+  line-height:5vh;
+  display:flex;
+  padding:0 20px;
+}
+.pageicon{
+  font-size:20px;
+  border:1px solid rgb(169, 169, 169);
+  padding:5px 10px;
+  border-radius:10px;
+  cursor: pointer;
+  margin:0 5px;
+  color:rgb(130, 130, 130);
+}
+.pageicon:hover{
+  background-color:rgba(0, 0, 0, 0.1);
+}
+.pageicon:active{
+  transform:scale(0.95);
+}
+/* Clock */
+.Clock{
+  color:rgb(87, 87, 87);
+  font-size:15px;
+}
 /* Main */
 .Main{
   display: flex;
   flex-direction: column;
-  height:90vh;
+  height:92vh;
 }
-.Main h1{
+
+/* TodoHeader */
+.TodoHeader{
+  height:10vh;
+}
+.TodoHeader h1{
   margin:0;
   font-size:35px;
 }
 .TodoLength{
   font-size:15px;
-  margin:10px;
+  margin:0;
   text-align:right;
   padding-right:50px;
   color:rgb(173, 173, 173);
@@ -58,10 +92,12 @@ body {
 }
 /* TodoForm */
 .TodoForm {
+  height:8vh;
   margin-bottom: 32px;
   display:flex;
   justify-content: space-between;
-  padding:0 20px;
+  padding:10px 20px;
+  box-sizing: border-box;
 }
 .TodoInput {
   width:80vw;
@@ -75,6 +111,7 @@ body {
 }
 .TodoButton {
   width:20vw;
+  height:57px;
   padding: 16px;
   border: none;
   border-radius: 0 4px 4px 0;
@@ -85,6 +122,7 @@ body {
 }
 /* TodoList */
 .TodoList{
+  height:60vh;
   margin:0;
   overflow:auto;
   -ms-overflow-style: none;
@@ -123,8 +161,24 @@ body {
   cursor: pointer;
 }
 
-/* Clock */
-.Clock{
-  color:rgb(87, 87, 87);
-  font-size:15px;
+/* MemoInput */
+.MemoInput textarea{
+  width:90%;
+  min-height:100px;
+  resize:vertical;
+  box-sizing:border-box;
+}
+
+.DiaryEditor textarea{
+  font-family: 'Nanum Pen Script', cursive;
+  font-size:20px;
+  box-sizing:border-box;
+  width:100%;
+  min-height:200px;
+  resize:vertical;
+  /* 가로로는 늘어나지 못하도록 함 */
+  border:none;
+  border-radius:5px;
+  background-color:#ececec;
+  padding:20px;
 }
