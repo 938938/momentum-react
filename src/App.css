@@ -168,17 +168,3 @@ body {
   resize:vertical;
   box-sizing:border-box;
 }
-
-.DiaryEditor textarea{
-  font-family: 'Nanum Pen Script', cursive;
-  font-size:20px;
-  box-sizing:border-box;
-  width:100%;
-  min-height:200px;
-  resize:vertical;
-  /* 가로로는 늘어나지 못하도록 함 */
-  border:none;
-  border-radius:5px;
-  background-color:#ececec;
-  padding:20px;
-}

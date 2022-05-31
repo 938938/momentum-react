@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {AiOutlineStar, AiFillDelete} from "react-icons/ai"
+import {AiOutlineStar, AiFillStar, AiFillDelete} from "react-icons/ai"
 import { TodoDispatchContext } from '../pages/Main'
 
 const TodoItem = ({
@@ -16,10 +16,12 @@ const TodoItem = ({
       className={completed ? "TodoItem complete" : "TodoItem"}
       style={important ? {background : "cornflowerblue"} : {}}
     >
-      <AiOutlineStar
-        className="TodoIcon"
+      <div
+        className='TodoIcon'
         onClick={()=>onImportant(id)}
-      />
+      >
+        {important ? <AiFillStar /> : <AiOutlineStar />}
+      </div>
       <div
         className="TodoText"
         onClick={()=>onCompleted(id)}
