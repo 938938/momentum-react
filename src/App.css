@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet&display=swap');
 
-
 body {
   background-color:rgb(236, 236, 236);
   display:flex;
@@ -30,16 +29,20 @@ body {
   }
 }
 @media (max-width : 650px){
+  body{
+    display:flex;
+  }
   .App{
-    height:100vh;
-    width:100vw;
+    width:98vw;
+    /* height:98vh; */
+    height: calc(var(--vh, 1vh) * 100);
   }
 }
 
 /* Header */
 .Header{
-  height:5vh;
-  line-height:5vh;
+  height:5%;
+  line-height:5%;
   display:flex;
   padding:0 20px;
 }
@@ -67,12 +70,13 @@ body {
 .Main{
   display: flex;
   flex-direction: column;
-  height:92vh;
+  height:95%;
 }
 
 /* TodoHeader */
 .TodoHeader{
-  height:10vh;
+  height:10%;
+  min-height:90px;
 }
 .TodoHeader h1{
   margin:0;
@@ -92,15 +96,16 @@ body {
 }
 /* TodoForm */
 .TodoForm {
-  height:8vh;
+  height:10%;
+  min-height:50px;
   margin-bottom: 32px;
   display:flex;
   justify-content: space-between;
-  padding:10px 20px;
+  padding:0 20px;
   box-sizing: border-box;
 }
 .TodoInput {
-  width:80vw;
+  width:100%;
   min-width: 200px;
   height: 25px;
   padding: 15px;
@@ -110,7 +115,8 @@ body {
   font-family: 'Hahmlet', serif;
 }
 .TodoButton {
-  width:20vw;
+  width:20%;
+  min-width:50px;
   height:57px;
   padding: 10px;
   border: none;
@@ -122,7 +128,7 @@ body {
 }
 /* TodoList */
 .TodoList{
-  height:60vh;
+  /* height:65vh; */
   margin:0;
   overflow:auto;
   -ms-overflow-style: none;
