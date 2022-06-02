@@ -5,7 +5,7 @@
 <br>
 자세한 제작 기록은 블로그의 [React 로 Todo List 만들기][] 게시물에서 확인하실 수 있습니다.
 
-[react 로 todo list 만들기]: https://fdaytday.tistory.com/category/Project
+[react 로 todo list 만들기]: https://fdaytday.tistory.com/category/Project/
 
 <br>
 
