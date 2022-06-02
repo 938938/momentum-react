@@ -45,6 +45,12 @@ export const TodoStateContext = React.createContext();
 export const TodoDispatchContext = React.createContext();
 
 const Main = () => {
+
+  useEffect(()=>{
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `Todo!`;
+  })
+
   const [data,dispatch] = useReducer(reducer,[]);
   const dataId = useRef(0);
 
