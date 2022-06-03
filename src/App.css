@@ -172,4 +172,27 @@ body {
   min-height:100px;
   resize:vertical;
   box-sizing:border-box;
+  border:4px double rgb(190, 210, 190);
+}
+.MemoInput button{
+  background-color:rgb(209, 233, 209);
+  border:0;
+  width:100%; height:30px;
+  font-size:20px;
+  color:white;
+  border-radius:10px;
+  cursor: pointer;
+}
+.MemoInput button:active{
+  background-color:rgb(192, 213, 192);
+}
+
+/* Memo Box */
+.MemoBox{
+  display:flex;
+}
+/* Memo Item */
+.MemoItem{
+  border:1px solid red;
+  width:30%;
 }
