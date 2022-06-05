@@ -31,7 +31,7 @@ body {
     width:280px;
     height:90px;
   }
-  .MemoInput button{
+  .MemoAdd button{
     width:580px;
   }
 }
@@ -47,7 +47,7 @@ body {
     width:90vw;
     height:90px;
   }
-  .MemoInput button{
+  .MemoAdd button{
     width:80vw;
   }
 }
@@ -180,15 +180,15 @@ body {
   cursor: pointer;
 }
 
-/* MemoInput */
-.MemoInput textarea{
+/* MemoAdd */
+.MemoAdd textarea{
   width:90%;
   min-height:100px;
   resize:vertical;
   box-sizing:border-box;
   border:4px double rgb(190, 210, 190);
 }
-.MemoInput button{
+.MemoAdd button{
   background-color:rgb(209, 233, 209);
   border:0;
   height:30px;
@@ -198,7 +198,7 @@ body {
   cursor: pointer;
   margin-bottom:20px;
 }
-.MemoInput button:active{
+.MemoAdd button:active{
   background-color:rgb(192, 213, 192);
 }
 
