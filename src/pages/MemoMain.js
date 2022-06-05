@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import MemoBox from "../components/MemoBox";
-// import MemoHeader from "../components/MemoHeader";
+import MemoEdit from "../components/MemoEdit";
 import MemoInput from "../components/MemoInput";
+// import MemoHeader from "../components/MemoHeader";
 
 const dummy = [
   {
@@ -41,6 +42,7 @@ const MemoMain = () => {
       ** 메모장 페이지입니다. (구현중) **
       {/* <MemoHeader /> */}
       <MemoInput />
+      <MemoEdit />
       <MemoBox data={dummy}/>
     </div>
   )
