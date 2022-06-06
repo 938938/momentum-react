@@ -1,9 +1,10 @@
-const MempPage = () => {
+const MemoPage = () => {
+
   return(
-    <div className="MempPage">
-      MempPage
+    <div className="MemoPage">
+      MemoPage
     </div>
   )
 }
 
-export default MempPage;
+export default MemoPage;
