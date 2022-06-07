@@ -31,7 +31,10 @@ body {
     width:280px;
     height:90px;
   }
-  .MemoAdd button{
+  .MemoNewButton button{
+    width:580px;
+  }
+  .MemoButton{
     width:580px;
   }
 }
@@ -47,7 +50,10 @@ body {
     width:90vw;
     height:90px;
   }
-  .MemoAdd button{
+  .MemoNewButton button{
+    width:80vw;
+  }
+  .MemoButton{
     width:80vw;
   }
 }
@@ -138,6 +144,7 @@ body {
   outline: none;
   background: lightblue;
   color: white;
+  white-space:nowrap;
 }
 /* TodoList */
 .TodoList{
@@ -179,16 +186,11 @@ body {
   font-size: 24px;
   cursor: pointer;
 }
-
-/* MemoAdd */
-.MemoAdd textarea{
-  width:90%;
-  min-height:100px;
-  resize:vertical;
-  box-sizing:border-box;
-  border:4px double rgb(190, 210, 190);
+/* MemoMain */
+.MemoNewButton{
+  margin-top:20px;
 }
-.MemoAdd button{
+.MemoNewButton button{
   background-color:rgb(209, 233, 209);
   border:0;
   height:30px;
@@ -198,8 +200,22 @@ body {
   cursor: pointer;
   margin-bottom:20px;
 }
-.MemoAdd button:active{
+.MemoNewButton button:active{
   background-color:rgb(192, 213, 192);
+}
+
+
+/* MemoForm */
+.MemoForm textarea{
+  width:90%;
+  height:70vh;
+  padding:10px;
+  resize:vertical;
+  box-sizing:border-box;
+  border:4px double rgb(190, 210, 190);
+  background-color:rgb(250, 250, 250);
+  margin-top:20px;
+  outline:none;
 }
 
 /* Memo Box */
@@ -230,4 +246,30 @@ body {
 }
 .MemoItem .MemoText{
   font-size:14px;
+}
+
+/* MemoButton */
+.MemoButton{
+  height:30px;
+  margin-top:20px;
+}
+.MemoButton_left{
+  border:0;
+  border-radius:10px 0 0 10px;
+  width:50%; height:100%;
+  cursor: pointer;
+  color:white;
+}
+.MemoButton_right{
+  border:0;
+  border-radius:0 10px 10px 0;
+  width:50%; height:100%;
+  cursor: pointer;
+  color:white;
+}
+.MemoButton_positive{
+  background-color:rgb(209, 233, 209);
+}
+.MemoButton_negative{
+  background-color:rgb(229, 229, 229);
 }
