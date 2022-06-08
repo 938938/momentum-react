@@ -30,6 +30,7 @@ const dummy = [
 ]
 
 const MemoMain = () => {
+
   const navigate = useNavigate();
   useEffect(()=>{
     const titleElement = document.getElementsByTagName("title")[0];
