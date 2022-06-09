@@ -48,7 +48,9 @@ const Main = () => {
 
   useEffect(()=>{
     const titleElement = document.getElementsByTagName("title")[0];
+    const headerName = document.querySelector(".headerName");
     titleElement.innerHTML = `Todo!`;
+    headerName.innerHTML = 'Todo!';
   })
 
   const [data,dispatch] = useReducer(reducer,[]);

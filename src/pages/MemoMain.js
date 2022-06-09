@@ -7,7 +7,9 @@ const MemoMain = () => {
   const navigate = useNavigate();
   useEffect(()=>{
     const titleElement = document.getElementsByTagName("title")[0];
+    const headerName = document.querySelector(".headerName");
     titleElement.innerHTML = `Memo!`;
+    headerName.innerHTML = 'Memo!';
   })
   return(
     <div className="MemoMain">

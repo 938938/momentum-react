@@ -17,6 +17,7 @@ const Header = () => {
           navigate('/memo')
         }}
       />
+      <h2 className="headerName">Todo!</h2>
     </div>
   )
 }
