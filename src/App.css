@@ -69,7 +69,7 @@ body {
   border-bottom:1px solid rgb(219, 219, 219);
 }
 .pageicon{
-  font-size:20px;
+  font-size:25px;
   border:1px solid rgb(169, 169, 169);
   padding:5px 10px;
   border-radius:10px;
@@ -97,7 +97,6 @@ body {
 .Main{
   display: flex;
   flex-direction: column;
-  height:95%;
 }
 
 /* TodoHeader */
@@ -152,7 +151,7 @@ body {
 }
 /* TodoList */
 .TodoList{
-  /* height:65vh; */
+  height:59vh;
   margin:0;
   overflow:auto;
   -ms-overflow-style: none;
@@ -191,6 +190,11 @@ body {
   cursor: pointer;
 }
 /* MemoMain */
+.MemoMain{
+  display: flex;
+  flex-direction: column;
+  height:95%;
+}
 .MemoNewButton button{
   background-color:rgb(209, 233, 209);
   border:0;
@@ -206,9 +210,12 @@ body {
 }
 
 /* MemoForm */
+.MemoForm{
+  height:100vh;
+}
 .MemoForm textarea{
   width:95%;
-  height:70vh;
+  height:70%;
   padding:20px;
   resize:vertical;
   box-sizing:border-box;
@@ -221,10 +228,20 @@ body {
 
 /* MemoList */
 .MemoList{
+  margin:0;
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
+  overflow:auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  height:70vh;
+  box-sizing:border-box;
 }
+.MemoList::-webkit-scrollbar {
+  display: none;
+}
+
 /* Memo Item */
 .MemoItem{
   border:2px solid rgb(228, 243, 228);
