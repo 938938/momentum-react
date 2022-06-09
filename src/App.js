@@ -8,6 +8,34 @@ import MemoMain from './pages/MemoMain';
 import MemoNew from './pages/MemoNew';
 import MemoPage from './pages/MemoPage';
 
+const dummy = [
+  {
+    date:new Date().getTime(),
+    id:1,
+    text:"첫번째 메모"
+  },
+  {
+    date:new Date().getTime(),
+    id:2,
+    text:"두번째 메모"
+  },
+  {
+    date:new Date().getTime(),
+    id:3,
+    text:"세번째 메모"
+  },
+  {
+    date:new Date().getTime(),
+    id:4,
+    text:"네번째 메모"
+  },
+  {
+    date:new Date().getTime(),
+    id:5,
+    text:"다섯번째 메모"
+  },
+]
+
 const reducer = (state,action)=>{
   let newState = [];
   switch(action.type){
@@ -37,17 +65,17 @@ export const MemoDispatchContext = React.createContext();
 
 function App() {
   
-  const [data,dispatch] = useReducer(reducer, []);
+  const [data,dispatch] = useReducer(reducer, dummy);
 
   const dataId = useRef(0);
 
-  const onCreate = (date, text)=>{
+  const onCreate = (text)=>{
     dispatch({type:"CREATE", data:{
       id: dataId.current,
-      date:new Date(date).getTime(),
+      date:new Date(),
       text
     }})
-    dataId.current++;
+    dataId.current += 1;
   }
 
   const onRemove = (targetId) => {

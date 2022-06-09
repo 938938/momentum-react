@@ -35,8 +35,8 @@ const reducer = (state, action) => {
   }
   localStorage.setItem('todo',JSON.stringify(newState));
   // localStorage에 'todo'라는 key값으로 데이터를 저장
-  newState.sort((a,b)=>a.completed - b.completed)
   newState.sort((a,b)=>b.important - a.important)
+  newState.sort((a,b)=>a.completed - b.completed)
   // complete한 아이템은 아래로 내리고, important 체크된 아이템은 위로 재정렬
   return newState;
 }
@@ -60,8 +60,8 @@ const Main = () => {
       const todoList = JSON.parse(localData).sort((a,b)=>parseInt(b.id) - parseInt(a.id));
       if(todoList.length>=1){
         dataId.current = parseInt(todoList[0].id) + 1;
-        todoList.sort((a,b)=>a.completed - b.completed)
         todoList.sort((a,b)=>b.important - a.important)
+        todoList.sort((a,b)=>a.completed - b.completed)
         // complete한 아이템은 아래로 내리고, important 체크된 아이템은 위로 재정렬
         dispatch({type:"INIT", data:todoList})
       }
