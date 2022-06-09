@@ -236,7 +236,6 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   height:70vh;
-  box-sizing:border-box;
 }
 .MemoList::-webkit-scrollbar {
   display: none;
@@ -246,7 +245,6 @@ body {
 .MemoItem{
   border:2px solid rgb(228, 243, 228);
   border-radius:20px;
-  /* flex:1 1 40%; */
   margin:9px;
   padding: 13px;
   box-sizing: border-box;
