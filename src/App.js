@@ -12,27 +12,32 @@ const dummy = [
   {
     date:new Date().getTime(),
     id:1,
-    text:"첫번째 메모"
+    text:"첫번째 메모",
+    delete:false,
   },
   {
     date:new Date().getTime(),
     id:2,
-    text:"두번째 메모"
+    text:"두번째 메모",
+    delete:false,
   },
   {
     date:new Date().getTime(),
     id:3,
-    text:"세번째 메모"
+    text:"세번째 메모",
+    delete:false,
   },
   {
     date:new Date().getTime(),
     id:4,
-    text:"네번째 메모"
+    text:"네번째 메모",
+    delete:false,
   },
   {
     date:new Date().getTime(),
     id:5,
-    text:"다섯번째 메모"
+    text:"다섯번째 메모",
+    delete:false,
   },
 ]
 
@@ -73,7 +78,8 @@ function App() {
     dispatch({type:"CREATE", data:{
       id: dataId.current,
       date:new Date(),
-      text
+      text,
+      delete:false,
     }})
     dataId.current += 1;
   }
@@ -107,7 +113,7 @@ function App() {
               <Route path='/' element={<Main />} />
               <Route path='/memo' element={<MemoMain />} />
               <Route path='/new' element={<MemoNew />} />
-              <Route path='/edit' element={<MemoEdit />} />
+              <Route path='/edit/:id' element={<MemoEdit />} />
               <Route path='/page/:id' element={<MemoPage />} />
             </Routes>
             {/* 페이지 라우팅 구현 */}
