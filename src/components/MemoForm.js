@@ -1,14 +1,14 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MemoDispatchContext } from "../App";
 import MemoButton from "./MemoButton";
 
-const MemoForm = () => {
+const MemoForm = ({isEdit, originData}) => {
   const textRef = useRef();
   const [text, setText] = useState("");
   const navigate = useNavigate();
 
-  const {onCreate} = useContext(MemoDispatchContext);
+  const {onCreate, onEdit} = useContext(MemoDispatchContext);
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -16,19 +16,29 @@ const MemoForm = () => {
       textRef.current.focus();
       return;
     }
-    onCreate(text);
+    if(!isEdit){
+      onCreate(text);
+    } else {
+      onEdit(originData.id, originData.date, text);
+    }
     navigate('/memo',{replace:true})
   }
+
+  useEffect(()=>{
+    if(isEdit){
+      setText(originData.text)
+    }
+  },[isEdit,originData])
 
   return(
     <form className="MemoForm">
       <MemoButton
-        text1={"취소"}
-        text2={"저장"}
-        type1={"negative"}
-        type2={"positive"}
-        onClick1={()=>navigate('/memo')}
-        onClick2={handleSubmit}
+        text1={"저장"}
+        type1={"positive"}
+        onClick1={handleSubmit}
+        text2={"취소"}
+        type2={"negative"}
+        onClick2={()=>navigate('/memo')}
       />
       <textarea
         placeholder="메모를 작성해주세요"
