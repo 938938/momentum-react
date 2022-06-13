@@ -56,7 +56,7 @@ function App() {
   const onCreate = (text)=>{
     dispatch({type:"CREATE", data:{
       id: dataId.current,
-      date:new Date(),
+      date:new Date().getTime(),
       text,
       delete:false,
     }})

@@ -231,8 +231,8 @@ body {
 .MemoList{
   margin:0;
   display:flex;
-  flex-direction:row;
   flex-wrap:wrap;
+  flex-flow:wrap;
   overflow:auto;
   -ms-overflow-style: none;
   scrollbar-width: none;

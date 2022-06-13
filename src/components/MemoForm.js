@@ -30,6 +30,11 @@ const MemoForm = ({isEdit, originData}) => {
     }
   },[isEdit,originData])
 
+  useEffect(()=>{
+    textRef.current.focus();
+  },[])
+  // 수정을 시작했을 때 포커스 효과 주기
+
   return(
     <form className="MemoForm">
       <MemoButton
