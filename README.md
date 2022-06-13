@@ -14,7 +14,7 @@ React 로 Todo List 만들기(1)
 
 <br>
 
-![ver1.8](https://user-images.githubusercontent.com/92746200/172867128-f7c0df84-f81b-404c-b9c6-921a51f5d271.png)
+![ver2.0](https://user-images.githubusercontent.com/92746200/172867128-f7c0df84-f81b-404c-b9c6-921a51f5d271.png)
 
 ## 업데이트 기록
 
@@ -41,6 +41,10 @@ React 로 Todo List 만들기(1)
   CSS 일부 수정(타이틀을 위로 변경)
   할 일 - 수행 여부 체크를 해도 중요도 체크가 되어있으면 아래로 내려가지 않는 오류 수정.
   메모장 - 메모장 메인 페이지 구성. 새 메뉴 추가 기능 구현(저장, 삭제, 수정은 아직 미구현입니다)
+- ver1.9<br>
+  메모장의 수정, 삭제, 상세 페이지 기능 구현. 저장 기능은 아직 미구현입니다.
+- ver2.0<br>
+  메모장의 데이터를 localStorgage에 연결, 입력된 데이터를 보존할 수 있습니다.
 
 ## 앞으로 업데이트 할 내용(예정, 순서 무관)
 

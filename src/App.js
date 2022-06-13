@@ -1,4 +1,4 @@
-import React, { useMemo, useReducer, useRef } from 'react';
+import React, { useEffect, useMemo, useReducer, useRef } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
@@ -29,6 +29,7 @@ const reducer = (state,action)=>{
     default:
       return state;
   }
+  localStorage.setItem('memo',JSON.stringify(newState));
   return newState;
 }
 
@@ -38,8 +39,19 @@ export const MemoDispatchContext = React.createContext();
 function App() {
   
   const [data,dispatch] = useReducer(reducer, []);
-
   const dataId = useRef(0);
+
+  useEffect(()=>{
+    const localData = localStorage.getItem('memo');
+    if(localData){
+      const memoList = JSON.parse(localData).sort((a,b)=>parseInt(b.id) - parseInt(a.id));
+      if(memoList.length>=1){
+        dataId.current = parseInt(memoList[0].id) + 1;
+        dispatch({type:"INIT", data:memoList})
+      }
+    }
+  },[])
+
 
   const onCreate = (text)=>{
     dispatch({type:"CREATE", data:{
