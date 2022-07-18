@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet&display=swap');
 
 body {
-  background-color:rgb(236, 236, 236);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-  margin:0;
+  background-color: rgb(236, 236, 236);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
   font-family: 'Hahmlet', serif;
 }
 .App {
@@ -14,133 +14,133 @@ body {
   flex-direction: column;
   justify-content: start;
   text-align: center;
-  background-color:white;
-  border-radius:20px;
-  box-shadow:0 5px 10px 0 rgba(0, 0, 0, 0.286);
-  padding:20px;
-  height:100vh;
-  margin:0;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.286);
+  padding: 20px;
+  height: 100vh;
+  margin: 0;
   box-sizing: border-box;
 }
-@media (min-width : 650px){
-  .App{
-    height:95vh;
-    width:640px;
+@media (min-width: 650px) {
+  .App {
+    height: 95vh;
+    width: 640px;
   }
-  .MemoItem{
-    width:280px;
-    height:90px;
+  .MemoItem {
+    width: 280px;
+    height: 90px;
   }
-  .MemoNewButton button{
-    width:580px;
+  .MemoNewButton button {
+    width: 580px;
   }
-  .MemoButton{
-    width:580px;
+  .MemoButton {
+    width: 580px;
   }
 }
-@media (max-width : 650px){
-  body{
-    display:flex;
+@media (max-width: 650px) {
+  body {
+    display: flex;
   }
-  .App{
-    width:100vw;
-    height:100vh;
-    border-radius:0;
+  .App {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
   }
-  .MemoItem{
-    width:90vw;
-    height:90px;
+  .MemoItem {
+    width: 90vw;
+    height: 90px;
   }
-  .MemoNewButton button{
-    width:80vw;
+  .MemoNewButton button {
+    width: 80vw;
   }
-  .MemoButton{
-    width:80vw;
+  .MemoButton {
+    width: 80vw;
   }
 }
 
 /* Header */
-.Header{
-  height:5%;
-  min-height:40px;
-  line-height:5%;
-  display:flex;
-  padding:10px 20px;
-  margin-bottom:20px;
-  border-bottom:1px solid rgb(219, 219, 219);
+.Header {
+  height: 5%;
+  min-height: 40px;
+  line-height: 5%;
+  display: flex;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgb(219, 219, 219);
 }
-.pageicon{
-  font-size:25px;
-  border:1px solid rgb(169, 169, 169);
-  padding:5px 10px;
-  border-radius:10px;
+.pageicon {
+  font-size: 25px;
+  border: 1px solid rgb(169, 169, 169);
+  padding: 5px 10px;
+  border-radius: 10px;
   cursor: pointer;
-  margin:0 5px;
-  color:rgb(130, 130, 130);
+  margin: 0 5px;
+  color: rgb(130, 130, 130);
 }
-.pageicon:hover{
-  background-color:rgba(0, 0, 0, 0.1);
+.pageicon:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
-.pageicon:active{
-  transform:scale(0.95);
+.pageicon:active {
+  transform: scale(0.95);
 }
-.headerName{
-  width:100%;
-  padding-right:100px;
-  margin-top:15px;
+.headerName {
+  width: 100%;
+  padding-right: 100px;
+  margin-top: 15px;
 }
 /* Clock */
-.Clock{
-  color:rgb(87, 87, 87);
-  font-size:15px;
+.Clock {
+  color: rgb(87, 87, 87);
+  font-size: 15px;
 }
 /* Main */
-.Main{
+.Main {
   display: flex;
   flex-direction: column;
 }
 
 /* TodoHeader */
-.TodoHeader{
-  height:10%;
-  min-height:40px;
+.TodoHeader {
+  height: 10%;
+  min-height: 40px;
 }
-.TodoLength{
-  font-size:15px;
-  margin:0;
-  text-align:right;
-  padding-right:50px;
-  color:rgb(173, 173, 173);
+.TodoLength {
+  font-size: 15px;
+  margin: 0;
+  text-align: right;
+  padding-right: 50px;
+  color: rgb(173, 173, 173);
 }
-.TodoLength span{
-  color:black;
-  text-decoration:underline;
-  font-size:17px;
+.TodoLength span {
+  color: black;
+  text-decoration: underline;
+  font-size: 17px;
 }
 /* TodoForm */
 .TodoForm {
-  height:10%;
-  min-height:50px;
+  height: 10%;
+  min-height: 50px;
   margin-bottom: 32px;
-  display:flex;
+  display: flex;
   justify-content: space-between;
-  padding:0 20px;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 .TodoInput {
-  width:100%;
+  width: 100%;
   min-width: 200px;
   height: 25px;
   padding: 15px;
   border-radius: 4px 0 0 4px;
   border: 1px solid lightblue;
-  outline:none;
+  outline: none;
   font-family: 'Hahmlet', serif;
 }
 .TodoButton {
-  width:20%;
-  min-width:50px;
-  height:57px;
+  width: 20%;
+  min-width: 50px;
+  height: 57px;
   padding: 10px;
   border: none;
   border-radius: 0 4px 4px 0;
@@ -148,13 +148,13 @@ body {
   outline: none;
   background: lightblue;
   color: white;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 /* TodoList */
-.TodoList{
-  height:59vh;
-  margin:0;
-  overflow:auto;
+.TodoList {
+  height: 59vh;
+  margin: 0;
+  overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -164,160 +164,163 @@ body {
 /* TodoItem */
 .TodoItem {
   display: flex;
-  text-align:left;
+  text-align: left;
   margin: 4px auto;
   color: white;
-  background:lightblue;
+  background: lightblue;
   padding: 16px;
   border-radius: 5px;
   width: 90%;
 }
-.TodoText{
-  cursor:pointer;
-  width:80vw;
-  margin:0;
+.TodoText {
+  cursor: pointer;
+  width: 80vw;
+  margin: 0;
 }
 .complete {
   text-decoration: line-through;
-  color:rgb(177, 177, 177);
-  background:rgb(211, 211, 211);
-  opacity:0.5;
+  color: rgb(177, 177, 177);
+  background: rgb(211, 211, 211);
+  opacity: 0.5;
 }
 .TodoIcon {
   display: flex;
   align-items: center;
-  width:10vw;
+  width: 10vw;
   font-size: 24px;
   cursor: pointer;
 }
 /* MemoMain */
-.MemoMain{
+.MemoMain {
   display: flex;
   flex-direction: column;
-  height:95%;
+  height: 95%;
 }
-.MemoNewButton button{
-  background-color:rgb(209, 233, 209);
-  border:0;
-  height:30px;
-  font-size:20px;
-  color:white;
-  border-radius:10px;
+.MemoNewButton button {
+  background-color: rgb(209, 233, 209);
+  border: 0;
+  height: 30px;
+  font-size: 20px;
+  color: white;
+  border-radius: 10px;
   cursor: pointer;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
-.MemoNewButton button:active{
-  background-color:rgb(192, 213, 192);
+.MemoNewButton button:active {
+  background-color: rgb(192, 213, 192);
 }
 
 /* MemoForm */
-.MemoForm{
-  height:100vh;
+.MemoForm {
+  height: 100vh;
 }
-.MemoForm textarea{
-  width:95%;
-  height:70%;
-  padding:20px;
-  resize:vertical;
-  box-sizing:border-box;
-  border:4px double rgb(190, 210, 190);
-  background-color:rgb(250, 250, 250);
-  margin-top:20px;
-  outline:none;
-  border-radius:10px;
+.MemoForm textarea {
+  width: 95%;
+  height: 70%;
+  padding: 20px;
+  resize: vertical;
+  box-sizing: border-box;
+  border: 4px double rgb(190, 210, 190);
+  background-color: rgb(250, 250, 250);
+  margin-top: 20px;
+  outline: none;
+  border-radius: 10px;
 }
 
 /* MemoList */
-.MemoList{
-  margin:0;
-  display:flex;
-  flex-wrap:wrap;
-  flex-flow:wrap;
-  overflow:auto;
+.MemoList {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-flow: wrap; */
+  overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  height:70vh;
+  height: 70vh;
 }
 .MemoList::-webkit-scrollbar {
   display: none;
 }
 
 /* Memo Item */
-.MemoItem{
-  border:2px solid rgb(228, 243, 228);
-  border-radius:20px;
-  margin:9px;
+.MemoItem {
+  border: 2px solid rgb(228, 243, 228);
+  border-radius: 20px;
+  margin: 9px;
   padding: 13px;
   box-sizing: border-box;
-  text-align:left;
-  background-color:rgb(226, 240, 226);
+  text-align: left;
+  background-color: rgb(226, 240, 226);
   cursor: pointer;
-  position:relative;
+  position: relative;
 }
-.MemoItem:hover{
-  background-color:rgb(220, 232, 220);
+.MemoItem:hover {
+  background-color: rgb(220, 232, 220);
 }
-.MemoItem .memodate{
-  font-size:12px;
-  color:gray;
-  margin-bottom:5px;
+.MemoItem .memodate {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 5px;
 }
-.MemoItem .memotext{
-  font-size:14px;
+.MemoItem .memotext {
+  font-size: 14px;
 }
-.MemoItem button{
-  position:absolute;
-  top:10px; right:10px;
-  border:0;
+.MemoItem button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 0;
   cursor: pointer;
-  background-color:inherit;
+  background-color: inherit;
 }
-.MemoItem button:active{
-  color:white;
+.MemoItem button:active {
+  color: white;
 }
 /* MemoButton */
-.MemoButton{
-  height:30px;
-  margin-top:20px;
+.MemoButton {
+  height: 30px;
+  margin-top: 20px;
   justify-content: center;
-  margin:0 auto;
+  margin: 0 auto;
 }
-.MemoButton_left{
-  border:0;
-  border-radius:10px 0 0 10px;
-  width:50%; height:100%;
+.MemoButton_left {
+  border: 0;
+  border-radius: 10px 0 0 10px;
+  width: 50%;
+  height: 100%;
   cursor: pointer;
-  color:white;
+  color: white;
 }
-.MemoButton_right{
-  border:0;
-  border-radius:0 10px 10px 0;
-  width:50%; height:100%;
+.MemoButton_right {
+  border: 0;
+  border-radius: 0 10px 10px 0;
+  width: 50%;
+  height: 100%;
   cursor: pointer;
-  color:white;
+  color: white;
 }
-.MemoButton_positive{
-  background-color:rgb(209, 233, 209);
+.MemoButton_positive {
+  background-color: rgb(209, 233, 209);
 }
-.MemoButton_negative{
-  background-color:rgb(229, 229, 229);
+.MemoButton_negative {
+  background-color: rgb(229, 229, 229);
 }
 
 /* MemoPage */
-.MemoPage article{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  height:100vh;
+.MemoPage article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
-.MemoPage section{
-  width:95%;
-  height:70%;
-  padding:20px;
-  box-sizing:border-box;
-  border:4px double rgb(190, 210, 190);
-  background-color:rgb(250, 250, 250);
-  margin-top:20px;
-  border-radius:10px;
-  text-align:left;
+.MemoPage section {
+  width: 95%;
+  height: 70%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 4px double rgb(190, 210, 190);
+  background-color: rgb(250, 250, 250);
+  margin-top: 20px;
+  border-radius: 10px;
+  text-align: left;
 }

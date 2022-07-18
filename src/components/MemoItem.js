@@ -1,29 +1,27 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { MemoDispatchContext } from "../App";
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { MemoDispatchContext } from '../App';
 
-const MemoItem = ({
-  id, text, date
-}) => {
+const MemoItem = ({ id, text, date }) => {
   // const {onRemove} = useContext(MemoDispatchContext);
   const navigate = useNavigate();
   // const handleRemove = () => {
-    
+
   // }
 
   const goDetail = () => {
-    navigate(`/page/${id}`)
-  }
+    navigate(`/page/${id}`);
+  };
 
-  return(
+  return (
     <div className="MemoItem" onClick={goDetail}>
-        <div className="memodate">{new Date(date).toLocaleDateString()}</div>
-        <div className="memotext">{text.slice(0, 25)}</div>
+      <div className="memodate">{new Date(date).toLocaleDateString()}</div>
+      <div className="memotext">{text.slice(0, 25)}</div>
       {/* <button
         onClick={handleRemove}
       >×</button> */}
     </div>
-  )
-}
+  );
+};
 
 export default MemoItem;

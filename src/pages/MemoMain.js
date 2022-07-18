@@ -1,28 +1,29 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import MemoList from "../components/MemoList";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import MemoList from '../components/MemoList';
 
 const MemoMain = () => {
-
   const navigate = useNavigate();
-  useEffect(()=>{
-    const titleElement = document.getElementsByTagName("title")[0];
-    const headerName = document.querySelector(".headerName");
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName('title')[0];
+    const headerName = document.querySelector('.headerName');
     titleElement.innerHTML = `Memo!`;
     headerName.innerHTML = 'Memo!';
-  })
-  return(
+  });
+  return (
     <div className="MemoMain">
       <div className="MemoNewButton">
         <button
-          onClick={()=>{
-            navigate('/new')
+          onClick={() => {
+            navigate('/new');
           }}
-        >+</button>
+        >
+          +
+        </button>
       </div>
       <MemoList />
     </div>
-  )
-}
+  );
+};
 
 export default MemoMain;

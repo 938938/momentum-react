@@ -1,11 +1,11 @@
-import MemoForm from "../components/MemoForm";
+import MemoForm from '../components/MemoForm';
 
 const MemoNew = () => {
-  return(
+  return (
     <div className="MemoNew">
       <MemoForm />
     </div>
-  )
-}
+  );
+};
 
 export default MemoNew;
