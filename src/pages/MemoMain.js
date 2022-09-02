@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 import MemoList from '../components/MemoList';
 
 const MemoMain = () => {
@@ -11,19 +12,38 @@ const MemoMain = () => {
     headerName.innerHTML = 'Memo!';
   });
   return (
-    <div className="MemoMain">
-      <div className="MemoNewButton">
-        <button
+    <MemoMainBox>
+      <div>
+        <MemoNewButton
           onClick={() => {
             navigate('/new');
           }}
         >
           +
-        </button>
+        </MemoNewButton>
       </div>
       <MemoList />
-    </div>
+    </MemoMainBox>
   );
 };
 
 export default MemoMain;
+
+const MemoMainBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+`
+const MemoNewButton = styled.button`
+  background-color: rgb(209, 233, 209);
+  border: 0;
+  height: 30px;
+  font-size: 20px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  &:active {
+    background-color: rgb(192, 213, 192);
+  }
+`

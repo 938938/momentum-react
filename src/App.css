@@ -94,11 +94,6 @@ body {
   color: rgb(87, 87, 87);
   font-size: 15px;
 }
-/* Main */
-.Main {
-  display: flex;
-  flex-direction: column;
-}
 
 /* TodoHeader */
 .TodoHeader {
@@ -189,25 +184,6 @@ body {
   width: 10vw;
   font-size: 24px;
   cursor: pointer;
-}
-/* MemoMain */
-.MemoMain {
-  display: flex;
-  flex-direction: column;
-  height: 95%;
-}
-.MemoNewButton button {
-  background-color: rgb(209, 233, 209);
-  border: 0;
-  height: 30px;
-  font-size: 20px;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-.MemoNewButton button:active {
-  background-color: rgb(192, 213, 192);
 }
 
 /* MemoForm */

@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import styled from 'styled-components';
 import { MemoStateContext } from '../App';
 import MemoForm from '../components/MemoForm';
 
@@ -22,7 +23,7 @@ const MemoEdit = () => {
   }, [id, memoList]);
 
   return (
-    <div className="MemoEdit">
+    <div>
       {originData && <MemoForm isEdit={true} originData={originData} />}
     </div>
   );

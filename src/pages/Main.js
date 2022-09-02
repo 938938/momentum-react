@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
+import styled from 'styled-components';
 import TodoForm from '../components/TodoForm';
 import TodoHeader from '../components/TodoHeader';
 import TodoList from '../components/TodoList';
@@ -103,15 +104,20 @@ const Main = () => {
     <TodoStateContext.Provider value={data}>
       <TodoDispatchContext.Provider value={memoizedDispatches}>
         {/* Provider도 컴포넌트이기 때문에, data와 상태변화함수는 따로 생성하는 것이 좋음(최적화 문제) */}
-        <div className="Main">
+        <MainBox>
           <TodoHeader />
           <TodoForm />
           <TodoList />
           {/* Provider으로 직접 전달하기 때문에 TodoForm과 TodoList에 따로 데이터를 전달하지 않아도 됨 */}
-        </div>
+        </MainBox>
       </TodoDispatchContext.Provider>
     </TodoStateContext.Provider>
   );
 };
 
 export default Main;
+
+const MainBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`
