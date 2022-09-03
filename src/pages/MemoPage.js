@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import styled from 'styled-components';
 import { MemoDispatchContext, MemoStateContext } from '../App';
 import MemoButton from '../components/MemoButton';
 
@@ -27,10 +28,10 @@ const MemoPage = () => {
   };
 
   if (!data) {
-    return <div className="MemoPage">Now Loading...</div>;
+    return <div>Now Loading...</div>;
   } else {
     return (
-      <div className="MemoPage">
+      <div>
         <MemoButton
           text1={'수정'}
           type1={'positive'}
@@ -39,12 +40,31 @@ const MemoPage = () => {
           type2={'negative'}
           onClick2={handleRemove}
         />
-        <article>
-          <section>{data.text}</section>
-        </article>
+        <MemoPageArticle>
+          <MemoPageSection>{data.text}</MemoPageSection>
+        </MemoPageArticle>
       </div>
     );
   }
 };
 
 export default MemoPage;
+
+const MemoPageArticle = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+`
+
+const MemoPageSection = styled.section`
+  width: 95%;
+  height: 70%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 4px double rgb(190, 210, 190);
+  background-color: rgb(250, 250, 250);
+  margin-top: 20px;
+  border-radius: 10px;
+  text-align: left;
+`
