@@ -1,5 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 import { MemoDispatchContext } from '../App';
 import MemoButton from './MemoButton';
 
@@ -36,7 +37,7 @@ const MemoForm = ({ isEdit, originData }) => {
   // 수정을 시작했을 때 포커스 효과 주기
 
   return (
-    <form className="MemoForm">
+    <MemoFormBox>
       <MemoButton
         text1={'저장'}
         type1={'positive'}
@@ -45,14 +46,30 @@ const MemoForm = ({ isEdit, originData }) => {
         type2={'negative'}
         onClick2={() => navigate('/memo')}
       />
-      <textarea
+      <MemoFormTextArea
         placeholder="메모를 작성해주세요"
         ref={textRef}
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-    </form>
+    </MemoFormBox>
   );
 };
 
 export default MemoForm;
+
+const MemoFormBox = styled.form`
+  height: 100vh;
+`
+const MemoFormTextArea = styled.textarea`
+  width: 95%;
+  height: 70%;
+  padding: 20px;
+  resize: vertical;
+  box-sizing: border-box;
+  border: 4px double rgb(190, 210, 190);
+  background-color: rgb(250, 250, 250);
+  margin-top: 20px;
+  outline: none;
+  border-radius: 10px;
+`

@@ -174,23 +174,6 @@ body {
   cursor: pointer;
 }
 
-/* MemoForm */
-.MemoForm {
-  height: 100vh;
-}
-.MemoForm textarea {
-  width: 95%;
-  height: 70%;
-  padding: 20px;
-  resize: vertical;
-  box-sizing: border-box;
-  border: 4px double rgb(190, 210, 190);
-  background-color: rgb(250, 250, 250);
-  margin-top: 20px;
-  outline: none;
-  border-radius: 10px;
-}
-
 /* MemoList */
 .MemoList {
   margin: 0;
