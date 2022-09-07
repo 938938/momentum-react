@@ -15,14 +15,38 @@ const MemoItem = ({ id, text, date }) => {
   };
 
   return (
-    <div className="MemoItem" onClick={goDetail}>
-      <div className="memodate">{new Date(date).toLocaleDateString()}</div>
-      <div className="memotext">{text.slice(0, 25)}</div>
+    <MemoItemBox onClick={goDetail}>
+      <MemoDate>{new Date(date).toLocaleDateString()}</MemoDate>
+      <MemoText>{text.slice(0, 25)}</MemoText>
       {/* <button
         onClick={handleRemove}
       >×</button> */}
-    </div>
+    </MemoItemBox>
   );
 };
 
 export default MemoItem;
+
+const MemoItemBox = styled.div`
+  border: 2px solid rgb(228, 243, 228);
+  border-radius: 20px;
+  margin: 9px;
+  padding: 13px;
+  box-sizing: border-box;
+  text-align: left;
+  background-color: rgb(226, 240, 226);
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    background-color: rgb(220, 232, 220);
+  }
+`
+const MemoDate = styled.div`
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 5px;
+`
+
+const MemoText = styled.div`
+  font-size: 14px;
+`

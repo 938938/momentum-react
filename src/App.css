@@ -83,56 +83,6 @@ body {
   font-size: 15px;
 }
 
-/* TodoHeader */
-.TodoHeader {
-  height: 10%;
-  min-height: 40px;
-}
-.TodoLength {
-  font-size: 15px;
-  margin: 0;
-  text-align: right;
-  padding-right: 50px;
-  color: rgb(173, 173, 173);
-}
-.TodoLength span {
-  color: black;
-  text-decoration: underline;
-  font-size: 17px;
-}
-/* TodoForm */
-.TodoForm {
-  height: 10%;
-  min-height: 50px;
-  margin-bottom: 32px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-.TodoInput {
-  width: 100%;
-  min-width: 200px;
-  height: 25px;
-  padding: 15px;
-  border-radius: 4px 0 0 4px;
-  border: 1px solid lightblue;
-  outline: none;
-  font-family: 'Hahmlet', serif;
-}
-.TodoButton {
-  width: 20%;
-  min-width: 50px;
-  height: 57px;
-  padding: 10px;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  outline: none;
-  background: lightblue;
-  color: white;
-  white-space: nowrap;
-}
 /* TodoList */
 .TodoList {
   height: 59vh;
@@ -174,59 +124,8 @@ body {
   cursor: pointer;
 }
 
-/* MemoList */
-.MemoList {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  /* flex-flow: wrap; */
-  overflow: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  height: 70vh;
-}
-.MemoList::-webkit-scrollbar {
-  display: none;
-}
-
-/* Memo Item */
-.MemoItem {
-  border: 2px solid rgb(228, 243, 228);
-  border-radius: 20px;
-  margin: 9px;
-  padding: 13px;
-  box-sizing: border-box;
-  text-align: left;
-  background-color: rgb(226, 240, 226);
-  cursor: pointer;
-  position: relative;
-}
-.MemoItem:hover {
-  background-color: rgb(220, 232, 220);
-}
-.MemoItem .memodate {
-  font-size: 12px;
-  color: gray;
-  margin-bottom: 5px;
-}
-.MemoItem .memotext {
-  font-size: 14px;
-}
-.MemoItem button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border: 0;
-  cursor: pointer;
-  background-color: inherit;
-}
-.MemoItem button:active {
-  color: white;
-}
 /* MemoButton */
-.MemoButton {
 
-}
 .MemoButton_left {
   border: 0;
   border-radius: 10px 0 0 10px;

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import styled from 'styled-components';
 import { TodoDispatchContext } from '../pages/Main';
 
 const TodoForm = () => {
@@ -17,20 +18,53 @@ const TodoForm = () => {
   };
 
   return (
-    <form className="TodoForm" onSubmit={handleSubmit}>
-      <input
-        className="TodoInput"
+    <TodoFormBox onSubmit={handleSubmit}>
+      <TodoInput
         placeholder="할 일을 입력해주세요"
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
         }}
       />
-      <button className="TodoButton" type="submit">
+      <TodoButton type="submit">
         추가
-      </button>
-    </form>
+      </TodoButton>
+    </TodoFormBox>
   );
 };
 
 export default React.memo(TodoForm);
+
+const TodoFormBox = styled.form`
+  height: 10%;
+  min-height: 50px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+`
+const TodoInput = styled.input`
+  width: 100%;
+  min-width: 200px;
+  height: 25px;
+  padding: 15px;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid lightblue;
+  outline: none;
+  font-family: 'Hahmlet', serif;
+`
+
+const TodoButton = styled.button`
+  width: 20%;
+  min-width: 50px;
+  height: 57px;
+  padding: 10px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: lightblue;
+  color: white;
+  white-space: nowrap;
+`
