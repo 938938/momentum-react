@@ -28,6 +28,7 @@ const MemoItem = ({ id, text, date }) => {
 export default MemoItem;
 
 const MemoItemBox = styled.div`
+  max-width: 13vw;
   border: 2px solid rgb(228, 243, 228);
   border-radius: 20px;
   margin: 9px;

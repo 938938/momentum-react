@@ -25,7 +25,7 @@ const MemoListBox = styled.div`
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  height: 70vh;
+  /* height: 70vh; */
   &::-webkit-scrollbar {
     display: none;
   }
