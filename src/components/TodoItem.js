@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AiOutlineStar, AiFillStar, AiFillDelete } from 'react-icons/ai';
+import styled from 'styled-components';
 import { TodoDispatchContext } from '../pages/Main';
 
 const TodoItem = ({ id, text, completed, important }) => {
@@ -11,15 +12,28 @@ const TodoItem = ({ id, text, completed, important }) => {
       className={completed ? 'TodoItem complete' : 'TodoItem'}
       style={important ? { background: 'cornflowerblue' } : {}}
     >
-      <div className="TodoIcon" onClick={() => onImportant(id)}>
+      <TodoIcon onClick={() => onImportant(id)}>
         {important ? <AiFillStar /> : <AiOutlineStar />}
-      </div>
-      <div className="TodoText" onClick={() => onCompleted(id)}>
+      </TodoIcon>
+      <TodoText onClick={() => onCompleted(id)}>
         {text}
-      </div>
+      </TodoText>
       <AiFillDelete className="TodoIcon" onClick={() => onRemove(id)} />
     </div>
   );
 };
 
 export default React.memo(TodoItem);
+
+const TodoIcon = styled.div`
+  display: flex;
+  align-items: center;
+  width: 10vw;
+  font-size: 24px;
+  cursor: pointer;
+`
+const TodoText = styled.div`
+  cursor: pointer;
+  width: 80vw;
+  margin: 0;
+`
