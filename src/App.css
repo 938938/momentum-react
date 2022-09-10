@@ -92,7 +92,7 @@ body {
   scrollbar-width: none;
 }
 .TodoList::-webkit-scrollbar {
-  display: none;
+
 }
 /* TodoItem */
 .TodoItem {
