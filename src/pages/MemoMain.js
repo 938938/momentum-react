@@ -33,8 +33,9 @@ const MemoMainBox = styled.div`
   display: flex;
   flex-direction: column;
   height: 95%;
-`
+`;
 const MemoNewButton = styled.button`
+  width: 90%;
   background-color: rgb(209, 233, 209);
   border: 0;
   height: 30px;
@@ -46,4 +47,4 @@ const MemoNewButton = styled.button`
   &:active {
     background-color: rgb(192, 213, 192);
   }
-`
+`;
