@@ -52,7 +52,6 @@ const TodoInput = styled.input`
   border-radius: 4px 0 0 4px;
   border: 1px solid lightblue;
   outline: none;
-  font-family: 'Hahmlet', serif;
 `
 
 const TodoButton = styled.button`
